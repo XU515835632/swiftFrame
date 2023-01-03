@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //初始化 window
         AppDelegate_configIQKeyboardManager()
         monitorNetwork()
+        initWindow()
         return true
     }
     
