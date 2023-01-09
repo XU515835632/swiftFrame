@@ -18,7 +18,7 @@ class BaseTabBarController: UITabBarController {
     func setupItemTitleTextAttributes() {
         let normalColor = BaseTabBarNormalTextColor;
         let selectColor = BaseTabBarSelectTextColor;
-        Cbs_setTabBarColor(normalColor, selectColor, nil)
+        K_setTabBarColor(normalColor, selectColor, nil)
     }
     
     /// 添加所有子控制器
@@ -44,7 +44,7 @@ class BaseTabBarController: UITabBarController {
     
 }
 
-func Cbs_setTabBarColor(_ normalColor:UIColor,_ selectColor:UIColor,_ bgColor:UIColor?) {
+func K_setTabBarColor(_ normalColor:UIColor,_ selectColor:UIColor,_ bgColor:UIColor?) {
     let tabBarItem = UITabBarItem.appearance();
     
     // 普通状态下的文字属性

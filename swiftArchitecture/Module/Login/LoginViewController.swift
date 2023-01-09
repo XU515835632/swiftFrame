@@ -52,8 +52,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     public lazy var titleLabel:UILabel = {
         let label = UILabel.init();
         label.text = "手机号注册/登录";
-        label.textColor = CbsHexColor("#333333");
-        label.font = CbsBoldFont(24);
+        label.textColor = KHexColor("#333333");
+        label.font = KBoldFont(24);
         label.textAlignment = NSTextAlignment.center;
         return label;
     }()
@@ -61,7 +61,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     public lazy var phoneTextFiled:UITextField = {
         let textField = UITextField.init();
         textField.placeholder = "请输入手机号";
-        textField.font = CbsFont(15);
+        textField.font = KFont(15);
         textField.keyboardType = .numberPad;
         textField.borderStyle = .none;
         textField.delegate = self;
@@ -73,12 +73,12 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         let leftImageView = UIImage(named: "textFiled_phone")?.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5);
         textField.background = leftImageView;
         let leftView = UIView.init();
-        leftView.Cbs_width = 20;
+        leftView.K_width = 20;
         textField.leftViewMode = UITextField.ViewMode.always;
         textField.leftView = leftView;
        
         let attributes: [NSAttributedString.Key: Any] = [
-            .font : CbsFont(14),
+            .font : KFont(14),
             .foregroundColor : UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
         ]
         
@@ -90,7 +90,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     public lazy var msgTextFiled:UITextField = {
         let textField = UITextField.init();
         textField.placeholder = "请输入验证码";
-        textField.font = CbsFont(15);
+        textField.font = KFont(15);
         textField.keyboardType = .numberPad;
         textField.borderStyle = .none;
         textField.delegate = self;
@@ -102,12 +102,12 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         let leftImageView = UIImage(named: "textFiled_phone")?.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5);
         textField.background = leftImageView;
         let leftView = UIView.init();
-        leftView.Cbs_width = 20;
+        leftView.K_width = 20;
         textField.leftViewMode = UITextField.ViewMode.always;
         textField.leftView = leftView;
        
         let attributes: [NSAttributedString.Key: Any] = [
-            .font : CbsFont(14),
+            .font : KFont(14),
             .foregroundColor : UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
         ]
         
@@ -120,7 +120,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         let btn = UIButton.init(type: .custom);
         btn.setTitle("获取验证码", for: .normal)
         btn.setTitleColor(UIColor(red: 0.84, green: 0.26, blue: 0.23, alpha: 0.2), for: .normal)
-        btn.titleLabel?.font = CbsFont(13)
+        btn.titleLabel?.font = KFont(13)
         btn.isEnabled = false
         btn.addTarget(self, action: #selector(getMsgCodeBtnClick), for: .touchUpInside)
         return btn;
@@ -130,9 +130,9 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         let btn = UIButton.init(type: .custom);
         btn.setTitle("手机号一键注册/登录", for: .normal)
         btn.setTitleColor(UIColor.white, for: .normal)
-        btn.titleLabel?.font = CbsFont(14)
+        btn.titleLabel?.font = KFont(14)
         btn.isEnabled = false
-        btn.backgroundColor = CbsHexColor("#E6E6E6")
+        btn.backgroundColor = KHexColor("#E6E6E6")
         btn.addTarget(self, action: #selector(loginEnterClick), for: .touchUpInside)
         return btn;
     }()
@@ -140,8 +140,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     public lazy var touristsBtn:UIButton = {
         let btn = UIButton.init(type: .custom);
         btn.setTitle("游客登录", for: .normal)
-        btn.setTitleColor(CbsHexColor("#999999"), for: .normal)
-        btn.titleLabel?.font = CbsFont(12)
+        btn.setTitleColor(KHexColor("#999999"), for: .normal)
+        btn.titleLabel?.font = KFont(12)
         btn.addTarget(self, action: #selector(touristsClick), for: .touchUpInside)
         return btn;
     }()
@@ -149,8 +149,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     public lazy var intoRegisterBtn:UIButton = {
         let btn = UIButton.init(type: .custom);
         btn.setTitle("收不到验证码？", for: .normal)
-        btn.setTitleColor(CbsHexColor("#999999"), for: .normal)
-        btn.titleLabel?.font = CbsFont(12)
+        btn.setTitleColor(KHexColor("#999999"), for: .normal)
+        btn.titleLabel?.font = KFont(12)
         btn.titleLabel?.textAlignment = .right
         btn.addTarget(self, action: #selector(intoRegisterVCClick), for: .touchUpInside)
         return btn;
@@ -168,12 +168,12 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         self.view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.left.right.equalTo(0)
-            make.top.equalTo(backBtn.snp_bottom).offset(20)
+            make.top.equalTo(backBtn.snp.bottom).offset(20)
         }
         
         self.view.addSubview(phoneTextFiled)
         phoneTextFiled.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp_bottom).offset(32)
+            make.top.equalTo(titleLabel.snp.bottom).offset(32)
             make.left.equalTo(15)
             make.right.equalTo(-15)
             make.height.equalTo(40)
@@ -181,7 +181,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         
         self.view.addSubview(msgTextFiled)
         msgTextFiled.snp.makeConstraints { make in
-            make.top.equalTo(phoneTextFiled.snp_bottom).offset(20)
+            make.top.equalTo(phoneTextFiled.snp.bottom).offset(20)
             make.left.equalTo(15)
             make.right.equalTo(-15)
             make.height.equalTo(40)
@@ -192,12 +192,12 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             make.right.equalTo(-15)
             make.width.equalTo(90)
             make.height.equalTo(40)
-            make.centerY.equalTo(msgTextFiled.snp_centerY)
+            make.centerY.equalTo(msgTextFiled.snp.centerY)
         }
         
         self.view.addSubview(operationBtn)
         operationBtn.snp.makeConstraints { make in
-            make.top.equalTo(msgTextFiled.snp_bottom).offset(20);
+            make.top.equalTo(msgTextFiled.snp.bottom).offset(20);
             make.right.equalTo(-15)
             make.left.equalTo(15)
             make.height.equalTo(40)
@@ -208,14 +208,14 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         touristsBtn.snp.makeConstraints { make in
             make.left.equalTo(27)
             make.height.equalTo(40)
-            make.top.equalTo(operationBtn.snp_bottom).offset(5)
+            make.top.equalTo(operationBtn.snp.bottom).offset(5)
         }
         
         self.view.addSubview(intoRegisterBtn)
         intoRegisterBtn.snp.makeConstraints { make in
             make.right.equalTo(-15)
             make.height.equalTo(40)
-            make.top.equalTo(operationBtn.snp_bottom).offset(5)
+            make.top.equalTo(operationBtn.snp.bottom).offset(5)
         }
     }
     
@@ -245,10 +245,10 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         }else{
             if(textField.text!.count >= 6 && phoneTextFiled.text!.count == 11){
                 operationBtn.isEnabled = true
-                operationBtn.backgroundColor = CbsHexColor("#d6423a")
+                operationBtn.backgroundColor = KHexColor("#d6423a")
             }else{
                 operationBtn.isEnabled = false
-                operationBtn.backgroundColor = CbsHexColor("#E6E6E6")
+                operationBtn.backgroundColor = KHexColor("#E6E6E6")
             }
         }
     }
@@ -300,7 +300,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             HUD.hide(animated: true);
             //缓存用户信息
             
-            CbsLog("1")
+            KLog("1")
         } failure: { code, msg in
             HUD.hide(animated: true);
             HUD.flash(.label("登录失败"), delay: 0.8)

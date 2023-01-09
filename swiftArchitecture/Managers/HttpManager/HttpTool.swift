@@ -59,7 +59,7 @@ public class HttpTool {
             case let .failure(error):
                 let statusCode = error.response?.statusCode ?? 1000
                 let message = "请求出错，错误码：" + String(statusCode)
-                CbsAllLog(message)
+                KAllLog(message)
                 failureHandle(failure: failure, stateCode: statusCode, message: error.errorDescription ?? message)
             }
         }

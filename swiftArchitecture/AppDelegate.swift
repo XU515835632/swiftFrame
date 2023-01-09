@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             case .ethernetOrWiFi:
                 message = "WiFi"
             }
-            CbsLog("当前网络状态===：\(message)")
+            KLog("当前网络状态===：\(message)")
 //            HUD.flash(.label(message),delay: 2.0)
         }
     }

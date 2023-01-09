@@ -1,5 +1,5 @@
 //
-//  CbsConst.swift
+//  KConst.swift
 //  swiftArchitecture
 //
 //  Created by apple on 2022/12/26.

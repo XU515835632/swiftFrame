@@ -13,11 +13,11 @@ class BaseNavigationController: UINavigationController, UIGestureRecognizerDeleg
         super.viewDidLoad()
         
         // 设置半透明毛玻璃导航条（白底黑字）
-        //        Cbs_setHalfTransparentNav()
-        //        Cbs_setNavColor(UIColor.white, BaseThemeColor, false)
+        //        K_setHalfTransparentNav()
+        //        K_setNavColor(UIColor.white, BaseThemeColor, false)
         
-        Cbs_setNavColor(BaseNavTitleColor2, BaseNavBgColor2, false) // 主题色白字
-        Cbs_setNavColor(BaseNavTitleColor, BaseNavBgColor, false) // 白底黑字
+        K_setNavColor(BaseNavTitleColor2, BaseNavBgColor2, false) // 主题色白字
+        K_setNavColor(BaseNavTitleColor, BaseNavBgColor, false) // 白底黑字
         
         addFullScreenPan() //全屏侧滑返回
         self.interactivePopGestureRecognizer?.delegate = self //侧滑返回
@@ -34,7 +34,7 @@ class BaseNavigationController: UINavigationController, UIGestureRecognizerDeleg
     /// 重写push方法的目的 : 拦截所有push进来的子控制器
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if (self.children.count > 0 ) {
-            let backItem = UIBarButtonItem.Cbs_backItem(imageName: "ic_dynamic_nav_back", target: self, action: #selector(ClickBackBtn))
+            let backItem = UIBarButtonItem.K_backItem(imageName: "ic_dynamic_nav_back", target: self, action: #selector(ClickBackBtn))
             viewController.navigationItem.leftBarButtonItem = backItem
             // 隐藏底部的工具条
             viewController.hidesBottomBarWhenPushed = true
@@ -59,7 +59,7 @@ class BaseNavigationController: UINavigationController, UIGestureRecognizerDeleg
 }
 
 // MARK: - 设置半透明毛玻璃导航条（白底黑字）
-func Cbs_setHalfTransparentNav() {
+func K_setHalfTransparentNav() {
     // 设置标题字体颜色
     var titleTextAttributes = Dictionary<NSAttributedString.Key,Any>()
     titleTextAttributes[NSAttributedString.Key.font] = UIFont.systemFont(ofSize: 18)
@@ -81,12 +81,12 @@ func Cbs_setHalfTransparentNav() {
 }
 
 // MARK: - 设置透明导航条,白字
-func Cbs_setTransparentNav() {
-    Cbs_setNavColor(UIColor.white, UIColor.clear, true)
+func K_setTransparentNav() {
+    K_setNavColor(UIColor.white, UIColor.clear, true)
 }
 
 // MARK: - 设置导航条背景颜色和标题颜色， iOS15是否透明
-func Cbs_setNavColor(_ titleColor:UIColor,_ navBgColor:UIColor,_ isTransparent:Bool) {
+func K_setNavColor(_ titleColor:UIColor,_ navBgColor:UIColor,_ isTransparent:Bool) {
     // 设置标题字体颜色
     var titleTextAttributes = Dictionary<NSAttributedString.Key,Any>()
     titleTextAttributes[NSAttributedString.Key.font] = UIFont.systemFont(ofSize: 18)

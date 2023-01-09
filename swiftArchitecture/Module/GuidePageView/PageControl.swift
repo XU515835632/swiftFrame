@@ -127,6 +127,8 @@ open class PageControl: UIControl {
                 return 0
             case .trailing:
                 return 0
+            @unknown default:
+                fatalError()
             }
         }()
         for (index, value) in self.indicatorLayers.enumerated() {
@@ -249,7 +251,7 @@ open class PageControl: UIControl {
     }
     
     fileprivate func updateIndicatorAttributes(for layer: CAShapeLayer) {
-        let index = self.indicatorLayers.index(of: layer)
+        let index = self.indicatorLayers.firstIndex(of: layer)
         let state: UIControl.State = index == self.currentPage ? .selected : .normal
         if let image = self.images[state] {
             layer.strokeColor = nil

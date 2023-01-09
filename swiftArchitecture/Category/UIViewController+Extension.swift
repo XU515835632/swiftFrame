@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     
-    class func Cbs_stringFromClass(_ className : AnyClass) -> String {
+    class func K_stringFromClass(_ className : AnyClass) -> String {
         let str : String = NSStringFromClass(className)
         return str
     }

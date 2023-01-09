@@ -21,7 +21,7 @@ enum RefreshType : Int {
 class BaseViewController: UIViewController {
     
     deinit {
-        print(" CbsBaseViewController - dealloc ")
+        print(" KBaseViewController - dealloc ")
     }
     
     override func viewDidLoad() {
@@ -34,51 +34,51 @@ class BaseViewController: UIViewController {
     }
     
     /// 标题
-    var Cbs_navTitle :String? {
+    var K_navTitle :String? {
         didSet {
-            self.navigationItem.title = Cbs_navTitle
+            self.navigationItem.title = K_navTitle
         }
     }
     /// 导航栏左侧标题
-    var Cbs_navLeftTitle :String? {
+    var K_navLeftTitle :String? {
         didSet {
-            let item =  UIBarButtonItem.Cbs_textItem(title: Cbs_navLeftTitle ?? "", titleColor: BaseNavTextColor, target: self, action: #selector(ClickLeftItem))
+            let item =  UIBarButtonItem.K_textItem(title: K_navLeftTitle ?? "", titleColor: BaseNavTextColor, target: self, action: #selector(ClickLeftItem))
             self.navigationItem.leftBarButtonItem = item
         }
     }
     /// 导航栏左侧img
-    var Cbs_navLeftImage :String? {
+    var K_navLeftImage :String? {
         didSet {
-            let item =  UIBarButtonItem.Cbs_imageItem(imageName: Cbs_navLeftImage ?? "", target: self, action: #selector(ClickLeftItem))
+            let item =  UIBarButtonItem.K_imageItem(imageName: K_navLeftImage ?? "", target: self, action: #selector(ClickLeftItem))
             self.navigationItem.leftBarButtonItem = item
         }
     }
     /// 导航栏右侧标题
-    var Cbs_navRightTitle :String? {
+    var K_navRightTitle :String? {
         didSet {
-            let item =  UIBarButtonItem.Cbs_textItem(title: Cbs_navRightTitle ?? "", titleColor: BaseNavTextColor, target: self, action: #selector(ClickRightItem))
+            let item =  UIBarButtonItem.K_textItem(title: K_navRightTitle ?? "", titleColor: BaseNavTextColor, target: self, action: #selector(ClickRightItem))
             self.navigationItem.rightBarButtonItem = item
         }
     }
     /// 导航栏右侧img
-    var Cbs_navRightImage :String? {
+    var K_navRightImage :String? {
         didSet {
-            let item =  UIBarButtonItem.Cbs_imageItem(imageName: Cbs_navRightImage ?? "", target: self, action: #selector(ClickRightItem))
+            let item =  UIBarButtonItem.K_imageItem(imageName: K_navRightImage ?? "", target: self, action: #selector(ClickRightItem))
             self.navigationItem.rightBarButtonItem = item
         }
     }
     
     /// 点击导航栏左侧item Block
-    var CbsClickNavLeftItemBlock:(() -> (Void))?
+    var KClickNavLeftItemBlock:(() -> (Void))?
     /// 点击导航栏右侧item Block
-    var CbsClickNavRightItemBlock:(() -> (Void))?
+    var KClickNavRightItemBlock:(() -> (Void))?
     
     @objc func ClickLeftItem() {
-        self.CbsClickNavLeftItemBlock?()
+        self.KClickNavLeftItemBlock?()
     }
     
     @objc func ClickRightItem() {
-        self.CbsClickNavRightItemBlock?()
+        self.KClickNavRightItemBlock?()
     }
     
     // MARK: - iOS 适配

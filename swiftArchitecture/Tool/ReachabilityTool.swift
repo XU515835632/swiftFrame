@@ -30,17 +30,17 @@ class ReachabilityTool {
         // 网络可用或切换网络类型时执行
         reachability.whenReachable = { reachability in
             if reachability.connection == .wifi {
-                CbsLog("WiFi")
+                KLog("WiFi")
                 status(.ethernetOrWiFi)
             } else {
-                CbsLog("蜂窝移动网络")
+                KLog("蜂窝移动网络")
                 status(.wwan)
             }
         }
         
         // 网络不可用时执行
         reachability.whenUnreachable = { reachability in
-            CbsLog("无网络连接")
+            KLog("无网络连接")
             status(.notReachable)
         }
         
@@ -48,7 +48,7 @@ class ReachabilityTool {
             // 开始监听，停止监听调用reachability.stopNotifier()即可
             try reachability.startNotifier()
         } catch {
-            CbsLog("Unable to start notifier")
+            KLog("Unable to start notifier")
         }
     }
 }

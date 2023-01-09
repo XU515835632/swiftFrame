@@ -1,5 +1,5 @@
 //
-//  UIColor+CbsExtension.swift
+//  UIColor+KExtension.swift
 //  swiftArchitecture
 //
 //  Created by apple on 2022/11/9.
@@ -10,12 +10,12 @@ import UIKit
 extension UIColor {
     
     /// color：支持“#123456”
-    class func Cbs_hexColor(_ hexStr: String) -> UIColor {
-        return UIColor.Cbs_hexColorA(hexStr, 1.0)
+    class func K_hexColor(_ hexStr: String) -> UIColor {
+        return UIColor.K_hexColorA(hexStr, 1.0)
     }
     
     /// color：支持“#123456”
-    class func Cbs_hexColorA(_ hexStr: String, _ alpha: CGFloat) -> UIColor {
+    class func K_hexColorA(_ hexStr: String, _ alpha: CGFloat) -> UIColor {
         let hexString = hexStr.trimmingCharacters(in: .whitespacesAndNewlines)
         let scanner = Scanner(string: hexString)
         if hexString.hasPrefix("#") {

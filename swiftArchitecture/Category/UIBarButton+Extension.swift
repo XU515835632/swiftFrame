@@ -9,22 +9,22 @@ import UIKit
 
 extension UIBarButtonItem {
     /// 根据图片生成UIBarButtonItem
-    static func Cbs_imageItem(imageName:String,target:AnyObject,action:Selector) -> UIBarButtonItem {
-        return Cbs_customItem(title: "", titleColor: UIColor.white, imageName: imageName, target: target, action: action,contentHorizontalAlignment: .center)
+    static func K_imageItem(imageName:String,target:AnyObject,action:Selector) -> UIBarButtonItem {
+        return K_customItem(title: "", titleColor: UIColor.white, imageName: imageName, target: target, action: action,contentHorizontalAlignment: .center)
     }
     
     /// 根据文字生成UIBarButtonItem
-    static func Cbs_textItem(title:String,titleColor:UIColor,target:AnyObject,action:Selector) -> UIBarButtonItem {
-        return Cbs_customItem(title: title, titleColor: titleColor, imageName: "", target: target, action: action,contentHorizontalAlignment: .center)
+    static func K_textItem(title:String,titleColor:UIColor,target:AnyObject,action:Selector) -> UIBarButtonItem {
+        return K_customItem(title: title, titleColor: titleColor, imageName: "", target: target, action: action,contentHorizontalAlignment: .center)
     }
     
     /// 返回按钮 带箭头的
-    static func Cbs_backItem(imageName:String,target:AnyObject,action:Selector) -> UIBarButtonItem {
-        return Cbs_customItem(title: "", titleColor: UIColor.white, imageName: imageName, target: target, action: action,contentHorizontalAlignment: .left,isBack: true)
+    static func K_backItem(imageName:String,target:AnyObject,action:Selector) -> UIBarButtonItem {
+        return K_customItem(title: "", titleColor: UIColor.white, imageName: imageName, target: target, action: action,contentHorizontalAlignment: .left,isBack: true)
     }
     
     /// 快速初始化一个UIBarButtonItem，内部是按钮
-    static func Cbs_customItem(title:String,titleColor:UIColor,imageName:String,target:AnyObject,action:Selector,
+    static func K_customItem(title:String,titleColor:UIColor,imageName:String,target:AnyObject,action:Selector,
                               contentHorizontalAlignment:UIControl.ContentHorizontalAlignment,isBack:Bool=false) -> UIBarButtonItem {
         let button = UIButton()
         if (title.count>0) {

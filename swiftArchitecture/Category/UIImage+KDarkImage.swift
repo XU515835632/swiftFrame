@@ -1,5 +1,5 @@
 //
-//  UIImage+CbsDarkImage.swift
+//  UIImage+KDarkImage.swift
 //  swiftArchitecture
 //
 //  Created by apple on 2022/11/9.
@@ -24,7 +24,7 @@ extension UIImage {
     }
     
     /// 设置动态图片
-    static func Cbs_dynamicImage(_ lightImage: String, _ darkImage: String) -> UIImage {
+    static func K_dynamicImage(_ lightImage: String, _ darkImage: String) -> UIImage {
         if #available(iOS 13.0, *) {
             return UIImage.dynamicImage(UIImage(named: lightImage)!, UIImage(named: darkImage)!)
         }

@@ -23,8 +23,8 @@ public class GuidePageView: UIView {
     /// 指示器
     public lazy var pageControl: PageControl = {
         let size = CGSize(width: 8.0, height: 8.0)
-        let normalImage   = creatImage(color: CbsHexColor("#EEEEEE") ?? UIColor(), size: size)
-        let selectedImage = creatImage(color: CbsHexColor("#c1c1c1") ?? UIColor(), size: size)
+        let normalImage   = creatImage(color: KHexColor("#EEEEEE") ?? UIColor(), size: size)
+        let selectedImage = creatImage(color: KHexColor("#c1c1c1") ?? UIColor(), size: size)
         var pageControl = PageControl()
         pageControl.setImage(normalImage, for: .normal)
         pageControl.setImage(selectedImage, for: .selected)
@@ -51,7 +51,7 @@ public class GuidePageView: UIView {
         let btn = UIButton.init(type: .custom)
         btn.setTitle("立即使用财报说", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        btn.setTitleColor(CbsHexColor("#666666"), for: .normal)
+        btn.setTitleColor(KHexColor("#666666"), for: .normal)
         btn.titleLabel?.sizeToFit()
         btn.backgroundColor = UIColor.white
         btn.layer.masksToBounds = true

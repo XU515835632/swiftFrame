@@ -5,7 +5,7 @@
 //  Created by apple on 2022/12/27.
 //
 
-import Foundation
+import Foundation 
 import UIKit
 
 class HomeViewController: BaseViewController {
@@ -37,13 +37,13 @@ class HomeViewController: BaseViewController {
     func guidePage() {
         let imageArray = ["GuidePages_1.png","GuidePages_2.png","GuidePages_3.png"];
         let guideView = GuidePageView.init(images: imageArray) {
-            CbsLog("进入")
+            KLog("进入")
         } startCompletion: {
-            CbsLog("开始使用app")
+            KLog("开始使用app")
         }
         guideView.skipButton.isHidden = true
         guideView.backgroundColor = UIColor.white
-        CbsKeyWindow?.addSubview(guideView)
+        KKeyWindow?.addSubview(guideView)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
